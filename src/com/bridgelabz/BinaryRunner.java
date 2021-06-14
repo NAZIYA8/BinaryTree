@@ -19,5 +19,11 @@ public class BinaryRunner {
         binaryTree.add(67);
         int size = binaryTree.getSize();
         System.out.println("Size of the binary tree is :" + size);
+        MyBinaryNode<Integer> Search = binaryTree.search(63);
+        if (Search == null) {
+            System.out.println("Search key not found");
+        } else {
+            System.out.println("Search key found.\nSearch Key = " + Search.getKey());
+        }
     }
 }

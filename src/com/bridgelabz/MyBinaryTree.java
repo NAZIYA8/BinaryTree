@@ -4,6 +4,8 @@ public class MyBinaryTree<K extends Comparable<K>> {
     private MyBinaryNode<K> root;
 
     /**
+     * This method is used to add elements recursively
+     *
      * @param current it is current node
      * @param key     element passed
      * @return
@@ -40,10 +42,37 @@ public class MyBinaryTree<K extends Comparable<K>> {
         return 1 + this.getSizeRecursive(current.left)
                 + this.getSizeRecursive(current.right);
     }
-    
+
     public int getSize() {
         return this.getSizeRecursive(root);
     }
+
+    /**
+     * This method is used to search the entered element if it is present in the tree or not
+     *
+     * @param current node
+     * @param key     is the element passed to search in the tree.
+     * @return
+     */
+    private MyBinaryNode<K> searchRecursively(MyBinaryNode<K> current, K key) {
+        if (current == null)
+            return null;
+        int compareResult = key.compareTo(current.key);
+
+        if (compareResult == 0) {
+            return current;
+        }
+        if (compareResult < 0) {
+            return searchRecursively(current.left, key);
+        } else {
+            return searchRecursively(current.right, key);
+        }
+    }
+
+    public MyBinaryNode<K> search(K key) {
+        return searchRecursively(root, key);
+    }
+
 
     /**
      * This method helps to show order of the elements passed.
