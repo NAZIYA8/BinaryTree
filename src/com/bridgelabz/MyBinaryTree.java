@@ -28,6 +28,24 @@ public class MyBinaryTree<K extends Comparable<K>> {
     }
 
     /**
+     * This method is used to get the size of the tree
+     *
+     * @param current node
+     * @return size of the tree
+     */
+    private int getSizeRecursive(MyBinaryNode<K> current) {
+        if (current == null) {
+            return 0;
+        }
+        return 1 + this.getSizeRecursive(current.left)
+                + this.getSizeRecursive(current.right);
+    }
+    
+    public int getSize() {
+        return this.getSizeRecursive(root);
+    }
+
+    /**
      * This method helps to show order of the elements passed.
      *
      * @param root root node of the tree to be traversed.
@@ -43,7 +61,6 @@ public class MyBinaryTree<K extends Comparable<K>> {
     public void showOrder() {
         orderHelper(root);
     }
-
 }
 
 
