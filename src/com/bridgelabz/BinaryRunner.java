@@ -2,6 +2,11 @@ package com.bridgelabz;
 
 public class BinaryRunner {
     public static void main(String[] args) {
-        System.out.println("Welcome to Binary Tree problem");
+        MyBinaryTree<Integer> binaryTree = new MyBinaryTree<>();
+
+        binaryTree.add(56);
+        binaryTree.add(30);
+        binaryTree.add(70);
+        binaryTree.showOrder();
     }
 }
