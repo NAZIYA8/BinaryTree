@@ -1,6 +1,6 @@
 # BinaryTree
 
-UC 2: 
+UC 1: 
 Ability to create a BST by adding 56 and then adding 30 & 70 
 - Use INode to create My Binary Node
 - Note the key has to extend comparable to compare and determine left or right node
